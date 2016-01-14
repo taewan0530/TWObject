@@ -21,11 +21,11 @@ public class ObjectPool<T>: ObjectPoolProtocol {
         _deactiveList = [T]()
     }
     
-    var activeList: [T] {
+    public var activeList: [T] {
         return _activeList
     }
     
-    var deactiveLst: [T] {
+    public var deactiveLst: [T] {
         return _deactiveList
     }
     
