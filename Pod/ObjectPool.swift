@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 public class ObjectPool<T> {
     private var _activeList = [T]()
     private var _deactiveList = [T]()
