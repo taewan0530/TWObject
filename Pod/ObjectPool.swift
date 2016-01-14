@@ -8,10 +8,18 @@
 
 import Foundation
 
+protocol ObjectPoolProtocol {
+    init()
+}
 
-public class ObjectPool<T> {
-    private var _activeList = [T]()
-    private var _deactiveList = [T]()
+public class ObjectPool<T>: ObjectPoolProtocol {
+    private var _activeList: [T]!
+    private var _deactiveList: [T]!
+    
+    required public init(){
+        _activeList = [T]()
+        _deactiveList = [T]()
+    }
     
     var activeList: [T] {
         return _activeList
@@ -44,7 +52,7 @@ public class ObjectPool<T> {
         }
     }
     
-    private func isEqual(a: T , b: T) -> Bool{
+    private func isEqual(a: T , b: T) -> Bool {
         guard let aObj = a as? AnyObject,
             bObj = b as? AnyObject else { return false }
         return  aObj === bObj
