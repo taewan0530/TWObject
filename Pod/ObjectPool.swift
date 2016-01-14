@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class ObjectPool<T> {
+public class ObjectPool<T>: NSObject {
     private var _activeList = [T]()
     private var _deactiveList = [T]()
     
