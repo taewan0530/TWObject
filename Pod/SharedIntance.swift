@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class SharedIntance {
+public class SharedIntance: NSObject {
     private var _dic = [String: AnyObject]()
     
     public func getInstance<T>(target: T) -> AnyObject {
